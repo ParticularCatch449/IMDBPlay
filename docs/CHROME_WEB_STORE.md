@@ -44,7 +44,9 @@ Fill in the **Store listing** tab:
 | **Description** | Copy/adapt from [README.md](../README.md). Include: Play Now buttons on IMDb, toolbar search popup, lightbox player, ad reduction. **Clearly state:** unofficial, not affiliated with IMDb or Amazon; does not host video; streams from third-party players (playimdb.com); user is responsible for content watched. |
 | **Category** | Entertainment |
 | **Icon** | Upload `icons/icon128.png` (128×128 PNG) from the project folder |
-| **Screenshots** | Upload at least one screenshot (1280×800 or 640×400). Use images from `docs/screenshots/` if present, or take new ones: title page with Play Now, popup search, lightbox player |
+| **Screenshots** | Upload at least one screenshot (1280×800 or 640×400). Use ready-made files in **`docs/store-assets/`** (`screenshot-1-title-page.png` through `screenshot-5-lightbox-player.png`). Regenerate with `python3 scripts/generate-store-assets.py` after updating `docs/screenshots/` |
+| **Small promo tile** | Optional: `docs/store-assets/promo-small-440x280.png` (440×280) |
+| **Marquee promo tile** | Optional: `docs/store-assets/promo-marquee-1400x560.png` (1400×560) |
 | **Homepage URL** | `https://github.com/ParticularCatch449/IMDBPlay` |
 | **Support URL** | `https://github.com/ParticularCatch449/IMDBPlay/issues` |
 
@@ -130,7 +132,7 @@ Review often takes **several days** (sometimes longer). You will get email when 
 
 - [ ] Developer account registered ($5 paid)
 - [ ] Uploaded **`imdbplay-v1.5.17.zip`** (not the GitHub repo zip)
-- [ ] Name, description, icon 128px, screenshots added
+- [ ] Name, description, icon 128px, screenshots from `docs/store-assets/` added
 - [ ] Privacy policy URL set to GitHub `PRIVACY.md`
 - [ ] Single purpose + permissions justifications filled in
 - [ ] Unofficial / not affiliated disclaimer in description
