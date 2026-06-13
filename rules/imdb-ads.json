@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "/_json/getads",
+      "initiatorDomains": ["imdb.com", "www.imdb.com", "m.imdb.com"],
+      "resourceTypes": ["xmlhttprequest", "script", "image", "sub_frame"]
+    }
+  },
+  {
+    "id": 2,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||fls-na.amazon.com^",
+      "initiatorDomains": ["imdb.com", "www.imdb.com", "m.imdb.com"],
+      "resourceTypes": ["xmlhttprequest", "ping", "image"]
+    }
+  },
+  {
+    "id": 3,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "/tr/*pageHit",
+      "initiatorDomains": ["imdb.com", "www.imdb.com", "m.imdb.com"],
+      "resourceTypes": ["xmlhttprequest", "ping"]
+    }
+  },
+  {
+    "id": 4,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||googlesyndication.com^",
+      "initiatorDomains": ["imdb.com", "www.imdb.com", "m.imdb.com"],
+      "resourceTypes": ["script", "sub_frame", "image", "xmlhttprequest"]
+    }
+  },
+  {
+    "id": 5,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||doubleclick.net^",
+      "initiatorDomains": ["imdb.com", "www.imdb.com", "m.imdb.com"],
+      "resourceTypes": ["script", "sub_frame", "image", "xmlhttprequest", "media"]
+    }
+  },
+  {
+    "id": 6,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||amazon-adsystem.com^",
+      "initiatorDomains": ["imdb.com", "www.imdb.com", "m.imdb.com"],
+      "resourceTypes": ["script", "sub_frame", "image", "xmlhttprequest", "media"]
+    }
+  },
+  {
+    "id": 7,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||taboola.com^",
+      "initiatorDomains": ["imdb.com", "www.imdb.com", "m.imdb.com"],
+      "resourceTypes": ["script", "sub_frame", "image", "xmlhttprequest"]
+    }
+  },
+  {
+    "id": 8,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||media-amazon.com/images/S/sash/",
+      "initiatorDomains": ["imdb.com", "www.imdb.com", "m.imdb.com"],
+      "resourceTypes": ["image"]
+    }
+  }
+]

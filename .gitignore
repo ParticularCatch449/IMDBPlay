@@ -1,0 +1,17 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment / secrets
+.env
+.env.*
+*.pem
+
+# Dependencies
+node_modules/
+
+# Build / release artifacts
+*.zip
+
+# Chrome unpacked-extension cache (generated on Load unpacked)
+_metadata/

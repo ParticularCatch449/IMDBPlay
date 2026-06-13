@@ -1,0 +1,324 @@
+.imdbplay-btn-wrap {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  vertical-align: middle;
+  margin-left: 14px;
+}
+
+.imdbplay-btn-wrap--subnav {
+  margin-left: 0;
+}
+
+.imdbplay-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.imdbplay-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  padding: 7px 16px 7px 8px;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  border-radius: 9999px;
+  background: linear-gradient(180deg, #f8d53a 0%, #f5c518 52%, #e3b20f 100%);
+  color: #111;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.015em;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.38);
+  transition:
+    background 0.18s ease,
+    box-shadow 0.18s ease,
+    border-color 0.18s ease,
+    transform 0.12s ease;
+}
+
+.imdbplay-btn:hover {
+  background: linear-gradient(180deg, #fbe04f 0%, #f7ca22 52%, #efc116 100%);
+  border-color: rgba(0, 0, 0, 0.22);
+  box-shadow:
+    0 2px 10px rgba(245, 197, 24, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.45);
+}
+
+.imdbplay-btn:active {
+  transform: scale(0.98);
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.22),
+    inset 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.imdbplay-btn:focus-visible {
+  outline: 2px solid #79b8ff;
+  outline-offset: 2px;
+}
+
+.imdbplay-btn__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.imdbplay-btn__icon svg {
+  display: block;
+  margin-left: 1px;
+}
+
+.imdbplay-btn__label {
+  padding-right: 2px;
+}
+
+.imdbplay-donate {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 1px 0 0;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.18s ease;
+}
+
+.imdbplay-donate__icon {
+  color: rgba(245, 197, 24, 0.75);
+}
+
+.imdbplay-donate:hover {
+  color: #f5c518;
+  text-decoration: none;
+}
+
+.imdbplay-donate:hover .imdbplay-donate__icon {
+  color: #f5c518;
+}
+
+.imdbplay-donate:focus-visible {
+  outline: 2px solid #79b8ff;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.imdbplay-donate--player {
+  padding: 6px 10px;
+  border-radius: 9999px;
+  background: rgba(0, 0, 0, 0.72);
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.55);
+  transition:
+    color 0.15s ease,
+    background 0.15s ease;
+}
+
+.imdbplay-donate--player:hover {
+  background: rgba(0, 0, 0, 0.85);
+  color: #f5c518;
+}
+
+.imdbplay-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483646;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.imdbplay-overlay.imdbplay-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.imdbplay-modal {
+  position: relative;
+  width: min(1100px, 96vw);
+  height: min(72vh, 720px);
+  background: #0f0f0f;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.65);
+  transform: scale(0.96) translateY(8px);
+  transition: transform 0.25s ease;
+}
+
+.imdbplay-overlay.imdbplay-open .imdbplay-modal {
+  transform: scale(1) translateY(0);
+}
+
+.imdbplay-overlay.imdbplay-overlay--fullscreen {
+  padding: 0;
+  background: #000;
+  backdrop-filter: none;
+}
+
+.imdbplay-modal:fullscreen,
+.imdbplay-modal:-webkit-full-screen {
+  width: 100vw;
+  height: 100vh;
+  max-width: none;
+  max-height: none;
+  border-radius: 0;
+  transform: none;
+  box-shadow: none;
+}
+
+.imdbplay-toolbar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.imdbplay-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.72);
+  color: #fff;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.imdbplay-close:hover {
+  background: rgba(245, 197, 24, 0.92);
+  color: #000;
+}
+
+.imdbplay-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: #000;
+}
+
+.imdbplay-loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f5c518;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  pointer-events: none;
+}
+
+.imdbplay-loading.imdbplay-hidden {
+  display: none;
+}
+
+.imdbplay-card-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  box-sizing: border-box;
+  width: auto;
+  max-width: 100%;
+  flex: 0 0 auto;
+  margin: 7px 0 6px;
+}
+
+.imdbplay-card-actions--block {
+  width: 100%;
+  align-self: stretch;
+}
+
+.imdbplay-card-btn {
+  box-sizing: border-box;
+  display: flex;
+  width: auto;
+  max-width: 100%;
+  margin: 0;
+  padding: 6px 12px 6px 6px;
+  gap: 8px;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.imdbplay-card-actions--block .imdbplay-card-btn {
+  width: 100%;
+}
+
+.imdbplay-card-btn .imdbplay-btn__icon {
+  width: 22px;
+  height: 22px;
+}
+
+.imdbplay-card-btn .imdbplay-btn__icon svg {
+  width: 12px;
+  height: 12px;
+}
+
+.imdbplay-card-actions--compact {
+  width: 100%;
+  max-width: 100%;
+  flex: 0 0 auto;
+  margin: 6px 0 0;
+  align-self: stretch;
+}
+
+.imdbplay-card-btn--compact {
+  width: 100%;
+  max-width: 100%;
+  min-height: 28px;
+  font-size: 12px;
+  padding: 5px 10px 5px 5px;
+  gap: 6px;
+}
+
+.imdbplay-card-btn--compact .imdbplay-btn__icon {
+  width: 18px;
+  height: 18px;
+}
+
+.imdbplay-card-btn--compact .imdbplay-btn__icon svg {
+  width: 10px;
+  height: 10px;
+}
+
+[data-testid^="tenup_item"] .imdbplay-card-actions,
+[data-testid="tenup_title_metadata"] .imdbplay-card-actions {
+  width: 100%;
+  max-width: 100%;
+  align-self: stretch;
+}
+
+[data-testid^="tenup_item"] .imdbplay-card-actions .imdbplay-card-btn {
+  width: 100%;
+}

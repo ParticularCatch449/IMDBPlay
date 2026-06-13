@@ -1,0 +1,126 @@
+# IMDBPlay
+
+![Version](https://img.shields.io/badge/version-1.5.17-blue)
+![Manifest](https://img.shields.io/badge/Manifest-V3-green)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+**IMDBPlay** is a browser extension that brings one-click playback to IMDb. Browse titles as usual, then hit **Play Now** to watch in a lightbox overlay powered by [playimdb.com](https://playimdb.com) embeds — no tab-hopping required.
+
+> ### Important disclaimer
+>
+> **IMDBPlay is an unofficial fan project.** It is **not** affiliated with, endorsed by, or connected to IMDb, Amazon, or any streaming service.
+>
+> **The author does not host, store, or provide video files.** All playback streams from third-party players (primarily playimdb.com). You could open those sites manually; this extension simply adds convenient **Play Now** buttons, a toolbar search popup, and ad reduction on IMDb and the player.
+>
+> **You are responsible** for the content you choose to watch and for complying with applicable laws in your region.
+
+## Features
+
+- **Title page Play Now** — gold button on movie and TV pages, plus an optional Ko-fi support link
+- **Play Now on cards** — homepage carousels, search results, charts, and lists
+- **Toolbar popup search** — find a title, open its IMDb page, and start playback
+- **Lightbox player** — watch without leaving IMDb; use the player controls for fullscreen
+- **Ad guard** — network rules and DOM cleanup on IMDb; popup/overlay blocking on player pages
+- **SPA-aware** — reinjects buttons when IMDb client-side navigation changes the page
+
+## Screenshots
+
+### Title page — Play Now + Support
+
+![Title page with Play Now button and support link](docs/screenshots/title-page.png)
+
+### Homepage carousel
+
+![Homepage carousel with Play Now on featured titles](docs/screenshots/homepage-carousel.png)
+
+### Chart / list pages
+
+![IMDb chart list with Play Now buttons on ranked titles](docs/screenshots/list-play-buttons.png)
+
+### Toolbar popup search
+
+![Extension popup searching for Superman with results](docs/screenshots/popup-search.png)
+
+### Lightbox player
+
+![Video playing in the IMDBPlay lightbox overlay on IMDb](docs/screenshots/lightbox-player.png)
+
+## Install
+
+### Option A — Load unpacked (developers)
+
+1. Clone or download this repository
+2. Open `chrome://extensions` (Chrome, Brave) or `edge://extensions` (Edge)
+3. Enable **Developer mode**
+4. Click **Load unpacked** and select the `IMDBPlay` folder (the one containing `manifest.json`)
+5. Confirm version **1.5.17** appears on the extension card
+
+After updates: click **Reload** on the extension, then hard-refresh open IMDb tabs.
+
+### Option B — GitHub Release (recommended for users)
+
+1. Go to [Releases](https://github.com/YOUR_USERNAME/IMDBPlay/releases) _(link TBD)_
+2. Download `imdbplay-v1.5.17.zip` from the latest release
+3. Unzip to a permanent folder
+4. Load unpacked as above, selecting the unzipped folder
+
+> Do not load the zip file directly — unzip first so `manifest.json` is at the root of the selected folder.
+
+### Chrome Web Store
+
+_Coming soon — store listing URL will be added here._
+
+## Browser support
+
+| Browser | Support |
+|---------|---------|
+| Google Chrome | Yes (MV3) |
+| Microsoft Edge | Yes (MV3) |
+| Brave | Yes (MV3) |
+| Firefox | Not supported (MV3 + DNR differences; would need separate packaging) |
+
+## Permissions
+
+| Permission | Why |
+|------------|-----|
+| `tabs` | Open the correct IMDb title tab when you choose a popup search result |
+| `declarativeNetRequest` | Apply bundled rules to block ads on IMDb and player pages |
+| IMDb hosts (`imdb.com`) | Inject Play buttons, lightbox, and on-page ad cleanup |
+| Player hosts (`playimdb.com`, etc.) | Embed playback and run player ad guard |
+| `v3.sg.media-imdb.com` | Public IMDb suggestion API for popup search |
+| `https://*/*` | Broad host access used by player iframe/embed flows |
+
+See [PRIVACY.md](PRIVACY.md) for what data leaves your browser.
+
+## Usage
+
+**Popup:** click the extension icon → search → click a result.
+
+**On IMDb:** click **Play Now** on a title or card → watch in the overlay → **X**, **Escape**, or backdrop click to close.
+
+## Support
+
+If you find IMDBPlay useful, you can support development on [Ko-fi](https://ko-fi.com/particularcatch).
+
+## Project layout
+
+| Path | Purpose |
+|------|---------|
+| `manifest.json` | Extension manifest |
+| `popup.*` | Toolbar search UI |
+| `content.*` | Play buttons, lightbox, support link |
+| `imdb-adblock.*` | IMDb ad removal |
+| `player-guard*.js` | Player ad/popup blocking |
+| `rules/*.json` | Declarative network request rules |
+| `icons/` | Extension icons |
+| `docs/` | Screenshots, release, and Chrome Web Store guides |
+
+## Development
+
+- **Package a release zip:** `./scripts/package.sh`
+- **Cut a release:** see [docs/RELEASE.md](docs/RELEASE.md)
+- **Chrome Web Store:** see [docs/CHROME_WEB_STORE.md](docs/CHROME_WEB_STORE.md)
+
+## License
+
+MIT — see [LICENSE](LICENSE).

@@ -1,0 +1,259 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  width: 360px;
+  min-height: 200px;
+  margin: 0;
+  padding: 0;
+  background: #121212;
+  color: #e8e8e8;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 16px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.header__icon {
+  flex-shrink: 0;
+  border-radius: 4px;
+}
+
+.header__title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #f5c518;
+}
+
+.search {
+  padding: 12px 16px 8px;
+}
+
+.search__field {
+  display: flex;
+  align-items: stretch;
+  gap: 6px;
+}
+
+.search__input {
+  flex: 1;
+  min-width: 0;
+  padding: 9px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 6px;
+  background: #1a1a1a;
+  color: #fff;
+  font: inherit;
+  outline: none;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.search__input::placeholder {
+  color: rgba(255, 255, 255, 0.38);
+}
+
+.search__input:focus {
+  border-color: rgba(245, 197, 24, 0.55);
+  box-shadow: 0 0 0 2px rgba(245, 197, 24, 0.15);
+}
+
+.search__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 38px;
+  padding: 0;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  border-radius: 6px;
+  background: linear-gradient(180deg, #f8d53a 0%, #f5c518 52%, #e3b20f 100%);
+  color: #111;
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    transform 0.1s ease;
+}
+
+.search__btn:hover {
+  background: linear-gradient(180deg, #fbe04f 0%, #f7ca22 52%, #efc116 100%);
+}
+
+.search__btn:active {
+  transform: scale(0.96);
+}
+
+.search__btn:focus-visible {
+  outline: 2px solid #79b8ff;
+  outline-offset: 2px;
+}
+
+.status {
+  padding: 8px 16px 4px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.status--error {
+  color: #ff8a80;
+}
+
+.status--loading {
+  color: #f5c518;
+}
+
+.results {
+  list-style: none;
+  margin: 0;
+  padding: 4px 8px 8px;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.results:empty {
+  display: none;
+}
+
+.result {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+  margin: 0;
+  padding: 10px 8px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.12s ease;
+}
+
+.result:hover,
+.result:focus-visible {
+  background: rgba(245, 197, 24, 0.1);
+  outline: none;
+}
+
+.result__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.result__title {
+  display: block;
+  font-weight: 500;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.result__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 3px;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.48);
+}
+
+.result__badge {
+  padding: 1px 6px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.result__play {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  margin-top: 2px;
+  border-radius: 50%;
+  background: rgba(245, 197, 24, 0.15);
+  color: #f5c518;
+}
+
+.result:hover .result__play,
+.result:focus-visible .result__play {
+  background: rgba(245, 197, 24, 0.28);
+}
+
+.imdb-search {
+  padding: 6px 16px 10px;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.imdb-search[hidden] {
+  display: none;
+}
+
+.imdb-search__link {
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  border-radius: 4px;
+  transition:
+    color 0.15s ease,
+    background 0.12s ease;
+}
+
+.imdb-search__link:hover {
+  color: #f5c518;
+  background: rgba(245, 197, 24, 0.06);
+}
+
+.imdb-search__link:focus-visible {
+  outline: 2px solid #79b8ff;
+  outline-offset: 2px;
+}
+
+.footer {
+  padding: 8px 16px 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
+}
+
+.footer__link {
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.footer__link:hover {
+  color: #f5c518;
+}
+
+.results::-webkit-scrollbar {
+  width: 6px;
+}
+
+.results::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.18);
+}

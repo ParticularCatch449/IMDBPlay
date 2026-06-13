@@ -1,0 +1,45 @@
+/* IMDb ad rows and sponsored placements */
+[data-testid^="section-AdRow"],
+[data-testid^="taboola-"],
+[data-testid="dynamic-slate-ad"],
+[data-testid="inline-ad"],
+[data-testid="advertisement"],
+[data-testid="sponsored-content"],
+[data-testid="video-slate-ad"],
+
+/* Third-party ad containers */
+.ins.adsbygoogle,
+[class^="div-gpt-ad"],
+[class*=" div-gpt-ad"],
+[data-id^="div-gpt-ad"],
+div[id^="taboola-stream-"],
+.taboolaads,
+.aax-v2_avia,
+.aax-v2_div,
+
+/* Ad iframes */
+iframe[src*="googlesyndication.com"],
+iframe[src*="doubleclick.net"],
+iframe[src*="amazon-adsystem.com"],
+iframe[src*="taboola.com"],
+iframe[src*="pubmatic.com"],
+iframe[src*="rubiconproject.com"],
+iframe[id^="google_ads_iframe"],
+iframe[name^="google_ads_iframe"],
+
+/* Legacy ad blocks */
+.ipc-page-section--ad,
+[class*="adSlot"],
+[class*="ad-slot"],
+[class*="AdSlot"],
+[class*="advert-slot"],
+[class*="sponsored-feed"] {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+}
