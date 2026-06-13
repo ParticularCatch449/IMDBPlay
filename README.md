@@ -124,13 +124,14 @@ This is an open-source browser extension. Chrome requires readable source for **
 | `player-guard*.js` | Player ad/popup blocking |
 | `rules/*.json` | Declarative network request rules |
 | `icons/` | Extension icons |
-| `docs/` | Screenshots, release, and Chrome Web Store guides |
+| `docs/` | Screenshots, release, Chrome Web Store, and Reddit post guides |
 
 ## Development
 
 - **Package a release zip:** `./scripts/package.sh`
-- **Cut a release:** see [docs/RELEASE.md](docs/RELEASE.md)
+- **Cut a release:** see [docs/RELEASE.md](docs/RELEASE.md) — or [manual steps](docs/GITHUB_RELEASE_MANUAL.md) via GitHub Desktop
 - **Chrome Web Store:** see [docs/CHROME_WEB_STORE.md](docs/CHROME_WEB_STORE.md)
+- **Reddit announcement:** see [docs/REDDIT_POST.md](docs/REDDIT_POST.md)
 
 ## License
 

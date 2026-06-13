@@ -1,83 +1,137 @@
-# Chrome Web Store publishing guide
+# Chrome Web Store — beginner's guide
 
-Step-by-step checklist for publishing IMDBPlay to the [Chrome Web Store](https://chrome.google.com/webstore/devconsole).
+This guide walks you through publishing **IMDBPlay** to the [Chrome Web Store](https://chrome.google.com/webstore). No coding required after the zip is ready.
 
-## 1. Developer account
+## What file to upload
 
-1. Sign in at the [Developer Dashboard](https://chrome.google.com/webstore/devconsole)
-2. Pay the one-time **$5 USD** registration fee
-3. Complete identity verification if prompted
+**Use the same zip as GitHub Releases:** `imdbplay-v1.5.17.zip`
 
-## 2. Prepare the upload zip
+- This file lives in the project folder (repo root).
+- If it is missing, open Terminal in the project folder and run: `./scripts/package.sh`
+- **Do not** upload the green **Code → Download ZIP** from GitHub — that is the full source repo and is the wrong shape for the store.
+- The correct zip has `manifest.json` at the **root** when you open it (not inside a subfolder).
 
-From the repo root:
+---
 
-```bash
-./scripts/package.sh
+## Step 1 — Register as a Chrome Web Store developer
+
+1. Open [Chrome Web Store Developer Dashboard](https://chrome.google.com/webstore/devconsole)
+2. Sign in with your Google account
+3. Pay the one-time **$5 USD** registration fee
+4. Complete any identity verification Google asks for
+
+---
+
+## Step 2 — Create a new listing
+
+1. In the dashboard, click **New item** (or **Add new item**)
+2. When prompted to upload your extension, click **Choose file** (or drag and drop)
+3. Select **`imdbplay-v1.5.17.zip`** from your computer  
+   (Path example: `IMDBPlay/imdbplay-v1.5.17.zip`)
+4. Wait for the upload to finish — Chrome will read `manifest.json` and show version **1.5.17**
+
+---
+
+## Step 3 — Store listing (what users see)
+
+Fill in the **Store listing** tab:
+
+| Field | What to enter |
+|-------|---------------|
+| **Language** | English |
+| **Name** | IMDBPlay |
+| **Summary** (132 chars max) | Play IMDb titles in a lightbox with ad blocking — unofficial fan extension |
+| **Description** | Copy/adapt from [README.md](../README.md). Include: Play Now buttons on IMDb, toolbar search popup, lightbox player, ad reduction. **Clearly state:** unofficial, not affiliated with IMDb or Amazon; does not host video; streams from third-party players (playimdb.com); user is responsible for content watched. |
+| **Category** | Entertainment |
+| **Icon** | Upload `icons/icon128.png` (128×128 PNG) from the project folder |
+| **Screenshots** | Upload at least one screenshot (1280×800 or 640×400). Use images from `docs/screenshots/` if present, or take new ones: title page with Play Now, popup search, lightbox player |
+| **Homepage URL** | `https://github.com/ParticularCatch449/IMDBPlay` |
+| **Support URL** | `https://github.com/ParticularCatch449/IMDBPlay/issues` |
+
+### Privacy policy URL
+
+Paste this exact link:
+
+```
+https://github.com/ParticularCatch449/IMDBPlay/blob/main/PRIVACY.md
 ```
 
-Upload the generated `imdbplay-vX.X.X.zip`. The zip root must contain `manifest.json` (not a nested folder).
+---
 
-**Do not include:** `.git`, `_metadata`, `docs`, `scripts`, `*.zip`, or `icon-source.png` unless you want the larger asset in the store build.
+## Step 4 — Privacy practices tab
 
-## 3. Store listing
-
-| Field | Suggested content |
-|-------|-------------------|
-| **Name** | IMDBPlay |
-| **Summary** | Play IMDb titles in a lightbox with ad blocking |
-| **Description** | Expand README feature list. State clearly: unofficial, not affiliated with IMDb/Amazon; **does not host or provide video files**; streams from third-party players (playimdb.com); user responsible for content watched |
-| **Category** | Entertainment |
-| **Language** | English |
-
-### Graphics
-
-- **Icon:** 128×128 PNG (`icons/icon128.png`)
-- **Screenshots:** at least one 1280×800 or 640×400 image of the popup and lightbox
-- **Small promo tile:** optional
-
-### Links
-
-| Field | Value |
-|-------|-------|
-| **Privacy policy** | GitHub URL to `PRIVACY.md` (e.g. `https://github.com/YOU/IMDBPlay/blob/main/PRIVACY.md`) |
-| **Homepage** | Repository URL |
-| **Support** | GitHub Issues URL |
-
-## 4. Privacy practices (dashboard form)
+Answer the dashboard questions to match [PRIVACY.md](../PRIVACY.md):
 
 - **Single purpose:** Add Play controls and ad reduction on IMDb pages
-- **Data collection:** None transmitted to developer
-- **Certify** uses match [PRIVACY.md](../PRIVACY.md)
+- **Data collection:** No personal data is collected or transmitted to the developer
+- **Certify** that your answers match the privacy policy
 
-## 5. Permissions justification
+---
 
-Prepare short explanations for review:
+## Step 5 — Permissions justification
+
+Reviewers may ask why each permission is needed. Use these explanations:
 
 | Permission | Justification |
 |------------|---------------|
-| `tabs` | Opens the IMDb title page when user selects a popup search result |
-| `declarativeNetRequest` | Blocks known ad/tracking URLs via bundled static rules |
-| `host_permissions` (IMDb) | Injects Play UI and lightbox on IMDb |
-| `host_permissions` (player domains) | Embeds third-party player and blocks player popups |
-| `https://*/*` | Required for player iframe embeds across redirect targets |
+| **`tabs`** | Opens the correct IMDb title tab when the user picks a result from the toolbar search popup |
+| **`declarativeNetRequest`** | Applies bundled static rules to block known ad and tracking URLs on IMDb and player pages |
+| **IMDb hosts** (`imdb.com`, `m.imdb.com`) | Injects Play Now buttons, lightbox overlay, and on-page ad cleanup |
+| **Player hosts** (`playimdb.com`, related embed domains) | Embeds third-party playback and blocks intrusive player popups |
+| **`v3.sg.media-imdb.com`** | Public IMDb suggestion API used for popup title search as you type |
+| **`https://*/*`** | Broad host access required for player iframe embeds that redirect across third-party domains |
 
-## 6. Distribution
+---
 
-- **Visibility:** Public (or Unlisted for beta)
-- **Regions:** All regions or your choice
-- **Pricing:** Free
+## Step 6 — Single purpose description
 
-## 7. Review tips
+Paste something like:
 
-- State clearly: **unofficial**, not affiliated with IMDb/Amazon
-- **Does not host, store, or provide video files** — playback streams from third-party players (playimdb.com); users could navigate there manually; the extension adds Play Now UI and ad reduction
-- Playback is via **third-party embeds** only; the developer does not operate any streaming service
-- No remote analytics or user accounts
-- Test the uploaded zip in a clean Chrome profile before submitting
-- Rejections often cite broad host permissions — reference the player iframe requirement in your justification
-- Updates: bump `version` in `manifest.json`, run `package.sh`, upload new zip
+> IMDBPlay adds one-click **Play Now** buttons and a toolbar search popup on IMDb, opens playback in an on-page lightbox via third-party embeds, and reduces ads on IMDb and player pages. It does not host or provide video files.
 
-## 8. After approval
+---
 
-Add the store URL to `README.md` under **Chrome Web Store**.
+## Step 7 — Unofficial / not affiliated disclaimer
+
+Include prominently in the **Description** (and in any reviewer notes field):
+
+> **IMDBPlay is an unofficial fan project.** It is **not** affiliated with, endorsed by, or connected to IMDb, Amazon, or any streaming service. The developer does not host, store, or provide video files. Playback streams from third-party players; users could open those sites manually — this extension only adds convenient UI and ad reduction.
+
+---
+
+## Step 8 — Distribution and submit
+
+1. **Visibility:** Public (or Unlisted if you want a direct link only during beta)
+2. **Regions:** All regions (or your choice)
+3. **Pricing:** Free
+4. Click **Submit for review**
+
+Review often takes **several days** (sometimes longer). You will get email when it is approved or if Google needs changes.
+
+---
+
+## After approval
+
+1. Copy your Chrome Web Store listing URL
+2. Add it to [README.md](../README.md) under **Chrome Web Store** (replace “Coming soon”)
+
+---
+
+## Updating later
+
+1. Bump `version` in `manifest.json`
+2. Run `./scripts/package.sh` to create a new `imdbplay-vX.X.X.zip`
+3. In the developer dashboard, open your item → **Package** → upload the new zip
+4. Update the store description if needed → **Submit for review** again
+
+---
+
+## Quick checklist
+
+- [ ] Developer account registered ($5 paid)
+- [ ] Uploaded **`imdbplay-v1.5.17.zip`** (not the GitHub repo zip)
+- [ ] Name, description, icon 128px, screenshots added
+- [ ] Privacy policy URL set to GitHub `PRIVACY.md`
+- [ ] Single purpose + permissions justifications filled in
+- [ ] Unofficial / not affiliated disclaimer in description
+- [ ] Submitted for review
