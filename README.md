@@ -23,6 +23,10 @@
 - **Ad guard** — network rules and DOM cleanup on IMDb; popup/overlay blocking on player pages
 - **SPA-aware** — reinjects buttons when IMDb client-side navigation changes the page
 
+## Support
+
+If IMDBPlay saves you time, consider supporting development on **[Ko-fi](https://ko-fi.com/particularcatch)** — it helps keep the project maintained.
+
 ## Screenshots
 
 ### Title page — Play Now + Support
@@ -47,7 +51,21 @@
 
 ## Install
 
-### Option A — Load unpacked (developers)
+### Option B — GitHub Release **(recommended)**
+
+1. Go to [Releases](https://github.com/ParticularCatch449/IMDBPlay/releases)
+2. Download `imdbplay-v1.5.17.zip` from the latest release
+3. Unzip to a permanent folder
+4. Open `chrome://extensions` (Chrome, Brave) or `edge://extensions` (Edge)
+5. Enable **Developer mode**
+6. Click **Load unpacked** and select the unzipped folder (the one containing `manifest.json`)
+7. Confirm version **1.5.17** appears on the extension card
+
+> Do not load the zip file directly — unzip first so `manifest.json` is at the root of the selected folder.
+
+After updates: download the new release zip, replace your folder (or unzip to a new one), click **Reload** on the extension, then hard-refresh open IMDb tabs.
+
+### Option A — Load unpacked from source (developers)
 
 1. Clone or download this repository
 2. Open `chrome://extensions` (Chrome, Brave) or `edge://extensions` (Edge)
@@ -55,16 +73,7 @@
 4. Click **Load unpacked** and select the `IMDBPlay` folder (the one containing `manifest.json`)
 5. Confirm version **1.5.17** appears on the extension card
 
-After updates: click **Reload** on the extension, then hard-refresh open IMDb tabs.
-
-### Option B — GitHub Release (recommended for users)
-
-1. Go to [Releases](https://github.com/YOUR_USERNAME/IMDBPlay/releases) _(link TBD)_
-2. Download `imdbplay-v1.5.17.zip` from the latest release
-3. Unzip to a permanent folder
-4. Load unpacked as above, selecting the unzipped folder
-
-> Do not load the zip file directly — unzip first so `manifest.json` is at the root of the selected folder.
+After updates: `git pull`, click **Reload** on the extension, then hard-refresh open IMDb tabs.
 
 ### Chrome Web Store
 
@@ -98,9 +107,11 @@ See [PRIVACY.md](PRIVACY.md) for what data leaves your browser.
 
 **On IMDb:** click **Play Now** on a title or card → watch in the overlay → **X**, **Escape**, or backdrop click to close.
 
-## Support
+## FAQ
 
-If you find IMDBPlay useful, you can support development on [Ko-fi](https://ko-fi.com/particularcatch).
+### Why are all these files public?
+
+This is an open-source browser extension. Chrome requires readable source for **Load unpacked** installs and release zips — every file in the repo (`manifest.json`, scripts, styles, icons, and network rules) is needed for the extension to run. IMDBPlay does not host video files or store secrets in the repository; playback comes from third-party embeds.
 
 ## Project layout
 
