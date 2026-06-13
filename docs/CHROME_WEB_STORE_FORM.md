@@ -64,6 +64,46 @@ The injected script runs only inside the playback iframe to block intrusive popu
 
 ---
 
+## Data usage
+
+Chrome Web Store **Privacy practices → Data usage** has two groups: (1) data-type checkboxes, (2) certification checkboxes at the bottom. Match [PRIVACY.md](../PRIVACY.md).
+
+### Data-type checkboxes — leave ALL unchecked
+
+Do **not** check any category. IMDBPlay does not collect, store, or transmit user data to the extension author. Everything below stays on the user’s device or goes directly to third-party services (IMDb, player hosts); the developer has no backend, analytics, or account system.
+
+| Category | Check? | Rationale |
+|----------|--------|-----------|
+| **Personally identifiable information** | No | No names, emails, addresses, or account IDs are read or sent to the developer. |
+| **Health information** | No | Not accessed. |
+| **Financial and payment information** | No | Not accessed. |
+| **Authentication information** | No | No login, passwords, or auth cookies are read or stored by the extension. |
+| **Personal communications** | No | Not accessed. |
+| **Location** | No | No geolocation API or location data. |
+| **Web history** | No | Does not read or transmit Chrome browsing history. Opens one IMDb tab when the user picks a popup search result (`tabs`); does not log or upload URLs. |
+| **User activity** | No | No analytics, click tracking, or activity logs sent to the developer. Popup search queries go from the browser directly to IMDb’s public suggestion API (`v3.sg.media-imdb.com`); the developer never receives them. |
+| **Website content** | No | IMDb page DOM is read locally to inject Play buttons and build the lightbox; content is not scraped, stored, or transmitted to the developer. Player-page `localStorage` / `sessionStorage` writes (ad-guard cooldown timestamps) stay on that third-party origin only. |
+
+**Third-party note (for your own records, not a checkbox):** Search text is sent to IMDb’s API and playback loads third-party player embeds. Those services have their own privacy practices; IMDBPlay does not receive or resell that data.
+
+### Certification checkboxes — check BOTH
+
+At the bottom of **Data usage**, check **both** certification statements (wording may vary slightly in the dashboard):
+
+1. **Limited Use / single-purpose use** — e.g. *“I certify that my use of the data complies with the Limited Use policy”* or *“…only for purposes related to the item’s single purpose.”*  
+   Vacuously true: the developer does not collect user data; on-device processing (DOM injection, ad rules, popup search) serves the stated single purpose only.
+
+2. **No sale / no unapproved transfer** — e.g. *“I certify that I do not sell or transfer user data to third parties, except for approved use cases.”*  
+   True: the developer does not sell or transfer user data. Network requests go from the user’s browser to IMDb and player hosts as part of normal extension function, not to the developer.
+
+### Consistency checklist
+
+- [ ] All nine data-type boxes **unchecked**
+- [ ] Both certification boxes **checked**
+- [ ] Privacy policy URL points to [PRIVACY.md](../PRIVACY.md) and matches these answers
+
+---
+
 ## Quick reference — declared permissions (manifest.json)
 
 | Field | Value |

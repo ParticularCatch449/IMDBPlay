@@ -39,6 +39,12 @@ These requests go directly from your browser to those services. The extension au
 - No sale or sharing of user data
 - No collection of browsing history beyond what is required for on-page Play buttons and popup search
 
+## Chrome Web Store disclosure
+
+For the Chrome Web Store **Data usage** form, IMDBPlay declares **no data types collected**: the extension author does not receive, store, or sell user data. Popup search text is sent from your browser directly to IMDb’s suggestion API and is not logged by the developer. IMDb page content is read only in your browser to inject Play controls. Ad-guard timestamps on player pages are written to that site’s `localStorage` / `sessionStorage` only.
+
+IMDBPlay’s use of information complies with the [Chrome Web Store User Data Policy](https://developer.chrome.com/docs/webstore/program-policies/user-data), including the [Limited Use](https://developer.chrome.com/docs/webstore/program-policies/limited-use) requirements.
+
 ## Third-party services
 
 Playback streams from third-party players (for example playimdb.com). Those sites have their own privacy practices and terms. IMDBPlay is not affiliated with IMDb, Amazon, or those player providers. You are responsible for the content you choose to watch.
