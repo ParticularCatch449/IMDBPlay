@@ -1,6 +1,6 @@
 # Chrome Web Store — permission & policy form copy
 
-Copy-paste blocks for the **Privacy practices** tab when submitting IMDBPlay. Based on `manifest.json` v1.5.17.
+Copy-paste blocks for the **Privacy practices** tab when submitting IMDBPlay. Based on `manifest.json` v1.5.18.
 
 For the full listing walkthrough (zip upload, screenshots, description), see [CHROME_WEB_STORE.md](CHROME_WEB_STORE.md).
 
@@ -42,8 +42,6 @@ The tabs permission is used only when the user selects a title from the toolbar 
 • nextgencloudfabric.com — Additional embed/CDN host used by the player iframe chain during playback. Required so guard scripts and network rules apply when the player redirects or nests frames on this domain.
 
 • v3.sg.media-imdb.com — Public IMDb title-suggestion API used by the toolbar popup search as the user types. The popup fetches suggestion JSON from this host only; no other IMDb API endpoints are called.
-
-• https://*/* — Broad host access for player iframe embeds that may redirect across third-party streaming/CDN domains during playback. IMDBPlay does not inject UI on arbitrary sites; this scope covers nested iframe origins the player loads at runtime.
 ```
 
 ---
@@ -109,6 +107,6 @@ At the bottom of **Data usage**, check **both** certification statements (wordin
 | Field | Value |
 |-------|-------|
 | `permissions` | `declarativeNetRequest`, `tabs` |
-| `host_permissions` | `playimdb.com`, `streamimdb.ru`, `nextgencloudfabric.com`, `v3.sg.media-imdb.com`, `https://*/*` |
+| `host_permissions` | `playimdb.com`, `streamimdb.ru`, `nextgencloudfabric.com`, `v3.sg.media-imdb.com` |
 | Content script hosts (no separate host permission) | `imdb.com`, `m.imdb.com`, player domains above |
 | `web_accessible_resources` | `player-guard-page.js` (player domains only) |

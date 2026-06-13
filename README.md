@@ -1,6 +1,6 @@
 # IMDBPlay
 
-![Version](https://img.shields.io/badge/version-1.5.17-blue)
+![Version](https://img.shields.io/badge/version-1.5.18-blue)
 ![Manifest](https://img.shields.io/badge/Manifest-V3-green)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
@@ -10,34 +10,59 @@
 
 ## Install
 
-### Option B — GitHub Release **(recommended)**
+**Four steps — takes about a minute.** Works in Chrome, Brave, and Edge.
 
-1. Go to [Releases](https://github.com/ParticularCatch449/IMDBPlay/releases)
-2. Download `imdbplay-v1.5.17.zip` from the latest release
-3. Unzip to a permanent folder (do not load the zip directly — `manifest.json` must be at the root of the selected folder)
+### Step 1 — Download the zip
 
-### Load unpacked (Chrome, Brave, or Edge)
+**[Download imdbplay-v1.5.18.zip](https://github.com/ParticularCatch449/IMDBPlay/releases/download/v1.5.18/imdbplay-v1.5.18.zip)**
 
-4. Open `chrome://extensions` (Chrome, Brave) or `edge://extensions` (Edge)
-5. Enable **Developer mode**
-6. Click **Load unpacked** and select the unzipped folder (the one containing `manifest.json`)
-7. Confirm version **1.5.17** appears on the extension card
+If that link does not work yet, open the [Releases page](https://github.com/ParticularCatch449/IMDBPlay/releases) and download `imdbplay-v1.5.18.zip` from the latest release.
 
-After updates: download the new release zip, replace your folder (or unzip to a new one), click **Reload** on the extension, then hard-refresh open IMDb tabs.
+### Step 2 — Unzip
 
-### Option A — Load unpacked from source (developers)
+- **Mac:** double-click the downloaded zip. A folder appears next to it.
+- **Windows:** right-click the zip → **Extract All…**
 
-1. Clone or download this repository
-2. Open `chrome://extensions` (Chrome, Brave) or `edge://extensions` (Edge)
-3. Enable **Developer mode**
-4. Click **Load unpacked** and select the `IMDBPlay` folder (the one containing `manifest.json`)
-5. Confirm version **1.5.17** appears on the extension card
+You should have a **folder** (not a `.zip` file). Open it and confirm **`manifest.json`** is inside that folder — not buried in a parent or subfolder.
 
-After updates: `git pull`, click **Reload** on the extension, then hard-refresh open IMDb tabs.
+### Step 3 — Open extensions in Chrome
+
+1. Open Chrome (or Brave / Edge).
+2. In the address bar, type **`chrome://extensions`** and press Enter.  
+   (Edge: **`edge://extensions`**)
+3. Turn **Developer mode** **ON** (toggle in the top-right).
+
+### Step 4 — Load unpacked
+
+1. Click **Load unpacked**.
+2. Select the **unzipped folder** from Step 2 — the folder that contains **`manifest.json`**.
+3. IMDBPlay appears in your extensions list. Confirm version **1.5.18** on the card.
+
+**Common mistakes**
+
+| Mistake | What to do instead |
+|---------|-------------------|
+| Selected the **`.zip` file** | Unzip first, then select the **folder**. |
+| Selected the **parent folder** (the one that still contains the zip) | Open the unzipped folder and select **that** folder. |
+| Selected a **subfolder** without `manifest.json` | The folder you pick must have `manifest.json` at its top level. |
+
+After updates: download the new zip, replace your folder, click **Reload** on the extension card, then hard-refresh open IMDb tabs.
 
 ### Chrome Web Store
 
-_Coming soon — store listing URL will be added here._
+_Add to Chrome from the Web Store — **coming soon**._ The store link will be added here when the listing is live.
+
+Enjoying IMDBPlay? **[Support development on Ko-fi](https://ko-fi.com/particularcatch)** — it helps keep the project maintained.
+
+### Developers — load from source
+
+1. Clone or download this repository.
+2. Open `chrome://extensions` (Chrome, Brave) or `edge://extensions` (Edge).
+3. Enable **Developer mode**.
+4. Click **Load unpacked** and select the `IMDBPlay` folder (the one containing `manifest.json`).
+5. Confirm version **1.5.18** appears on the extension card.
+
+After updates: `git pull`, click **Reload** on the extension, then hard-refresh open IMDb tabs.
 
 | Browser | Support |
 |---------|---------|
@@ -121,10 +146,22 @@ See [PRIVACY.md](PRIVACY.md) for what data leaves your browser.
 
 ## Development
 
-- **Package a release zip:** `./scripts/package.sh`
+- **Package a release zip:** `./scripts/package.sh` → creates `imdbplay-v1.5.18.zip`
 - **Cut a release:** see [docs/RELEASE.md](docs/RELEASE.md) — or [manual steps](docs/GITHUB_RELEASE_MANUAL.md) via GitHub Desktop
 - **Chrome Web Store:** see [docs/CHROME_WEB_STORE.md](docs/CHROME_WEB_STORE.md) and [docs/CHROME_WEB_STORE_FORM.md](docs/CHROME_WEB_STORE_FORM.md)
 - **Reddit announcement:** see [docs/REDDIT_POST.md](docs/REDDIT_POST.md)
+
+### Publish v1.5.18 release (GitHub Desktop)
+
+`gh` and `git push` are not authenticated in this environment. To make the zip downloadable from GitHub:
+
+1. **GitHub Desktop** → commit & push `README.md`, `manifest.json`, and docs → **Push origin**
+2. Browser → [Releases](https://github.com/ParticularCatch449/IMDBPlay/releases) → **Draft a new release**
+3. Tag **`v1.5.18`**, target **`main`**, title **`v1.5.18`**
+4. Attach **`imdbplay-v1.5.18.zip`** from the project folder (run `./scripts/package.sh` first)
+5. **Publish release**
+
+Full walkthrough with screenshot callouts: [docs/GITHUB_RELEASE_MANUAL.md](docs/GITHUB_RELEASE_MANUAL.md)
 
 ## License
 

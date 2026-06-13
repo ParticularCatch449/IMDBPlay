@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "IMDBPlay",
-  "version": "1.5.17",
+  "version": "1.5.18",
   "description": "Play movies and series from IMDb in a lightbox player via PlayIMDB, with built-in ad blocking.",
   "action": {
     "default_popup": "popup.html",
@@ -102,7 +102,6 @@
     "https://*.nextgencloudfabric.com/*",
     "http://nextgencloudfabric.com/*",
     "http://*.nextgencloudfabric.com/*",
-    "https://v3.sg.media-imdb.com/*",
-    "https://*/*"
+    "https://v3.sg.media-imdb.com/*"
   ]
 }
