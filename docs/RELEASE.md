@@ -51,4 +51,4 @@ Included by `package.sh`:
 
 Excluded: `.git`, `docs`, `scripts`, `_metadata`, `README`, `LICENSE`, `PRIVACY.md`, source-only assets.
 
-Users install by unzipping and **Load unpacked**. For Chrome Web Store, use the same zip — see [CHROME_WEB_STORE.md](CHROME_WEB_STORE.md).
+Users install from the **[Chrome Web Store](https://chromewebstore.google.com/detail/imdbplay/aifhjjpecbbeopjjhfaamikldjhobjmp)** (recommended) or by unzipping and **Load unpacked** for manual/sideload installs. Store updates use the same zip — see [CHROME_WEB_STORE.md](CHROME_WEB_STORE.md).

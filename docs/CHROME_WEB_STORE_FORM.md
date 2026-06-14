@@ -1,5 +1,7 @@
 # Chrome Web Store — permission & policy form copy
 
+**Listing is live:** https://chromewebstore.google.com/detail/imdbplay/aifhjjpecbbeopjjhfaamikldjhobjmp
+
 Copy-paste blocks for the **Privacy practices** tab when submitting IMDBPlay. Based on `manifest.json` v1.5.18.
 
 For the full listing walkthrough (zip upload, screenshots, description), see [CHROME_WEB_STORE.md](CHROME_WEB_STORE.md).

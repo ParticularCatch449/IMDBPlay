@@ -10,29 +10,41 @@
 
 ## Install
 
-**Four steps — takes about a minute.** Works in Chrome, Brave, and Edge.
+Works in Chrome, Brave, and Edge.
 
-### Step 1 — Download the zip
+### Chrome Web Store (recommended)
+
+**[Add to Chrome from the Web Store](https://chromewebstore.google.com/detail/imdbplay/aifhjjpecbbeopjjhfaamikldjhobjmp)**
+
+One click — no Developer mode or unzip needed. After updates, Chrome usually refreshes the extension automatically; hard-refresh open IMDb tabs if buttons do not appear.
+
+Enjoying IMDBPlay? **[Support development on Ko-fi](https://ko-fi.com/particularcatch)** — it helps keep the project maintained.
+
+### Manual install from GitHub Release
+
+**Four steps — takes about a minute.** Use this for sideloading or if you prefer a local copy.
+
+#### Step 1 — Download the zip
 
 **[Download imdbplay-v1.5.18.zip](https://github.com/ParticularCatch449/IMDBPlay/releases/download/v1.5.18/imdbplay-v1.5.18.zip)**
 
-If that link does not work yet, open the [Releases page](https://github.com/ParticularCatch449/IMDBPlay/releases) and download `imdbplay-v1.5.18.zip` from the latest release.
+If that link does not work, open the [Releases page](https://github.com/ParticularCatch449/IMDBPlay/releases) and download `imdbplay-v1.5.18.zip` from the latest release.
 
-### Step 2 — Unzip
+#### Step 2 — Unzip
 
 - **Mac:** double-click the downloaded zip. A folder appears next to it.
 - **Windows:** right-click the zip → **Extract All…**
 
 You should have a **folder** (not a `.zip` file). Open it and confirm **`manifest.json`** is inside that folder — not buried in a parent or subfolder.
 
-### Step 3 — Open extensions in Chrome
+#### Step 3 — Open extensions in Chrome
 
 1. Open Chrome (or Brave / Edge).
 2. In the address bar, type **`chrome://extensions`** and press Enter.  
    (Edge: **`edge://extensions`**)
 3. Turn **Developer mode** **ON** (toggle in the top-right).
 
-### Step 4 — Load unpacked
+#### Step 4 — Load unpacked
 
 1. Click **Load unpacked**.
 2. Select the **unzipped folder** from Step 2 — the folder that contains **`manifest.json`**.
@@ -47,12 +59,6 @@ You should have a **folder** (not a `.zip` file). Open it and confirm **`manifes
 | Selected a **subfolder** without `manifest.json` | The folder you pick must have `manifest.json` at its top level. |
 
 After updates: download the new zip, replace your folder, click **Reload** on the extension card, then hard-refresh open IMDb tabs.
-
-### Chrome Web Store
-
-_Add to Chrome from the Web Store — **coming soon**._ The store link will be added here when the listing is live.
-
-Enjoying IMDBPlay? **[Support development on Ko-fi](https://ko-fi.com/particularcatch)** — it helps keep the project maintained.
 
 ### Developers — load from source
 

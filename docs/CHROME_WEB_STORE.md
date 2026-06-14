@@ -1,10 +1,16 @@
 # Chrome Web Store — beginner's guide
 
-This guide walks you through publishing **IMDBPlay** to the [Chrome Web Store](https://chrome.google.com/webstore). No coding required after the zip is ready.
+**IMDBPlay is live on the Chrome Web Store:**
+
+**https://chromewebstore.google.com/detail/imdbplay/aifhjjpecbbeopjjhfaamikldjhobjmp**
+
+For everyday installs, share that link (also in [README.md](../README.md)). The steps below document the initial publish walkthrough and how to ship updates.
+
+---
 
 ## What file to upload
 
-**Use the same zip as GitHub Releases:** `imdbplay-v1.5.17.zip`
+**Use the same zip as GitHub Releases:** `imdbplay-v1.5.18.zip`
 
 - This file lives in the project folder (repo root).
 - If it is missing, open Terminal in the project folder and run: `./scripts/package.sh`
@@ -26,9 +32,9 @@ This guide walks you through publishing **IMDBPlay** to the [Chrome Web Store](h
 
 1. In the dashboard, click **New item** (or **Add new item**)
 2. When prompted to upload your extension, click **Choose file** (or drag and drop)
-3. Select **`imdbplay-v1.5.17.zip`** from your computer  
-   (Path example: `IMDBPlay/imdbplay-v1.5.17.zip`)
-4. Wait for the upload to finish — Chrome will read `manifest.json` and show version **1.5.17**
+3. Select **`imdbplay-v1.5.18.zip`** from your computer  
+   (Path example: `IMDBPlay/imdbplay-v1.5.18.zip`)
+4. Wait for the upload to finish — Chrome will read `manifest.json` and show version **1.5.18**
 
 ---
 
@@ -114,8 +120,13 @@ Review often takes **several days** (sometimes longer). You will get email when 
 
 ## After approval
 
-1. Copy your Chrome Web Store listing URL
-2. Add it to [README.md](../README.md) under **Chrome Web Store** (replace “Coming soon”)
+IMDBPlay is approved and public. Canonical listing URL:
+
+```
+https://chromewebstore.google.com/detail/imdbplay/aifhjjpecbbeopjjhfaamikldjhobjmp
+```
+
+Keep this link in [README.md](../README.md), Reddit post blurbs, and release notes so users can install with one click.
 
 ---
 
@@ -131,7 +142,7 @@ Review often takes **several days** (sometimes longer). You will get email when 
 ## Quick checklist
 
 - [ ] Developer account registered ($5 paid)
-- [ ] Uploaded **`imdbplay-v1.5.17.zip`** (not the GitHub repo zip)
+- [ ] Uploaded **`imdbplay-v1.5.18.zip`** (not the GitHub repo zip)
 - [ ] Name, description, icon 128px, screenshots from `docs/store-assets/` added
 - [ ] Privacy policy URL set to GitHub `PRIVACY.md`
 - [ ] Single purpose + permissions justifications filled in

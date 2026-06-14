@@ -2,6 +2,8 @@
 
 Upload-ready images for the [Chrome Web Store Developer Dashboard](https://chrome.google.com/webstore/devconsole). All PNGs are **24-bit RGB** (no alpha), sized to Google’s requirements.
 
+**Published listing:** https://chromewebstore.google.com/detail/imdbplay/aifhjjpecbbeopjjhfaamikldjhobjmp
+
 Regenerate anytime:
 
 ```bash

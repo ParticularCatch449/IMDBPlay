@@ -27,9 +27,13 @@ If you browse IMDb for what to watch but hate opening new tabs or hunting for a 
 
 Playback streams from **third-party embed players** — IMDBPlay does not host any video files.
 
-### Install (about a minute)
+### Install
 
 Works in **Chrome**, **Brave**, and **Edge** (Manifest V3).
+
+**Chrome Web Store (easiest):** https://chromewebstore.google.com/detail/imdbplay/aifhjjpecbbeopjjhfaamikldjhobjmp — click **Add to Chrome**. One click; no Developer mode.
+
+**Manual / sideload** (about a minute, GitHub Release zip):
 
 1. **Download** `imdbplay-v1.5.18.zip` from the latest GitHub Release:  
    **https://github.com/ParticularCatch449/IMDBPlay/releases**
@@ -40,10 +44,11 @@ Works in **Chrome**, **Brave**, and **Edge** (Manifest V3).
 
 **Common mistakes:** selecting the `.zip` file instead of the unzipped folder, or picking a parent/subfolder that doesn't contain `manifest.json` at its root.
 
-After updates: download the new zip, replace your folder, click **Reload** on the extension card, then hard-refresh IMDb tabs.
+After manual installs: download the new zip, replace your folder, click **Reload** on the extension card, then hard-refresh IMDb tabs. Store installs update automatically.
 
 ### Links
 
+- **Chrome Web Store:** https://chromewebstore.google.com/detail/imdbplay/aifhjjpecbbeopjjhfaamikldjhobjmp
 - **Source, screenshots, privacy policy:** https://github.com/ParticularCatch449/IMDBPlay
 - **Support development:** https://ko-fi.com/particularcatch
 
@@ -61,10 +66,10 @@ Feedback, bug reports, and feature ideas are welcome here or via GitHub Issues. 
 
 **IMDBPlay v1.5.18** adds **Play Now** buttons across IMDb (title pages, carousels, charts, search) plus a toolbar popup search. Click Play Now → watch in an on-page **lightbox** without leaving IMDb. Built-in ad guard on IMDb and player embeds.
 
-**Install:** download `imdbplay-v1.5.18.zip` from https://github.com/ParticularCatch449/IMDBPlay/releases → unzip → `chrome://extensions` → Developer mode ON → **Load unpacked** → select the folder with `manifest.json` → hard-refresh IMDb tabs.
+**Install:** Chrome Web Store — https://chromewebstore.google.com/detail/imdbplay/aifhjjpecbbeopjjhfaamikldjhobjmp (easiest). Manual sideload: download `imdbplay-v1.5.18.zip` from https://github.com/ParticularCatch449/IMDBPlay/releases → unzip → `chrome://extensions` → Developer mode ON → **Load unpacked** → select the folder with `manifest.json` → hard-refresh IMDb tabs.
 
 **Disclaimer:** unofficial; not affiliated with IMDb/Amazon; does not host video — streams from third-party embeds. You are responsible for what you watch.
 
-**GitHub:** https://github.com/ParticularCatch449/IMDBPlay · **Ko-fi:** https://ko-fi.com/particularcatch
+**Store:** https://chromewebstore.google.com/detail/imdbplay/aifhjjpecbbeopjjhfaamikldjhobjmp · **GitHub:** https://github.com/ParticularCatch449/IMDBPlay · **Ko-fi:** https://ko-fi.com/particularcatch
 
 Feedback welcome here or on GitHub Issues.

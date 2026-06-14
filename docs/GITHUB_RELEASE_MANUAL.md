@@ -41,7 +41,9 @@ You should see **“No local changes”** and the latest commit on GitHub.
    | **Description** | Paste: |
 
    ```
-   Download imdbplay-v1.5.18.zip, unzip, then Load unpacked in chrome://extensions.
+   Install from the Chrome Web Store: https://chromewebstore.google.com/detail/imdbplay/aifhjjpecbbeopjjhfaamikldjhobjmp
+
+   Manual sideload: download imdbplay-v1.5.18.zip, unzip, then Load unpacked in chrome://extensions.
 
    Direct download: https://github.com/ParticularCatch449/IMDBPlay/releases/download/v1.5.18/imdbplay-v1.5.18.zip
    ```

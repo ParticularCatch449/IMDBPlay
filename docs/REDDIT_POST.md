@@ -17,7 +17,11 @@ Copy and adapt for r/chrome_extensions, r/browsers, or similar. Replace `[your p
 
 **Install (Chrome / Edge / Brave):**
 
-1. Download **`imdbplay-v1.5.17.zip`** from the latest GitHub Release:  
+**Chrome Web Store (easiest):** https://chromewebstore.google.com/detail/imdbplay/aifhjjpecbbeopjjhfaamikldjhobjmp — click **Add to Chrome**.
+
+**Manual / sideload** (GitHub Release zip):
+
+1. Download **`imdbplay-v1.5.18.zip`** from the latest GitHub Release:  
    **https://github.com/ParticularCatch449/IMDBPlay/releases**
 2. Unzip to a folder
 3. Open `chrome://extensions` → enable **Developer mode** → **Load unpacked** → select the unzipped folder (the one with `manifest.json` at the top level)
@@ -33,4 +37,6 @@ Feedback welcome via GitHub Issues.
 
 ## Short comment reply (if someone asks “link?”)
 
-GitHub Release zip: https://github.com/ParticularCatch449/IMDBPlay/releases — download `imdbplay-v1.5.17.zip`, unzip, Load unpacked in `chrome://extensions`.
+Chrome Web Store: https://chromewebstore.google.com/detail/imdbplay/aifhjjpecbbeopjjhfaamikldjhobjmp
+
+Manual sideload: https://github.com/ParticularCatch449/IMDBPlay/releases — download `imdbplay-v1.5.18.zip`, unzip, Load unpacked in `chrome://extensions`.
